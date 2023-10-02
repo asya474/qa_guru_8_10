@@ -1,2 +1,2 @@
-pytest>=7.4.2
-selene>=2.0.0b4
+﻿pytest==7.3.0
+selene==2.0.0rc4
