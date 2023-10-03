@@ -19,19 +19,18 @@ def test_registration_form(browser_management):
     browser.element(".react-datepicker__day.react-datepicker__day--012").should(be.visible).click()
     browser.element('#subjectsInput').type('computer science').press_enter()
     browser.element("#uploadPicture").should(be.visible).type(os.path.abspath("pictures/character.png"))
-    browser.element('#currentAddress').should(be.blank).type('Sugar Palace, a candy store in Ponyville.')
+    browser.element("#currentAddress").type("Sugar Palace, a candy store in Ponyville.")
     browser.element('#react-select-3-input').type('NCR').press_enter()
     browser.element('#react-select-4-input').type('Delhi').press_enter()
     browser.element("#submit").click()
-    browser.all("#example-modal-sizes-title-lg").should(have.texts(
-    "Test Test",
-    "test@test.com",
-    "Female",
-    "1234567890",
-    "12 May 1919",
-    "computer science",
-    "Sports",
-    "character.png",
-    "Sugar Palace, a candy store in Ponyville.",
-    "NCR Delhi"))
-    browser.element("#closeLargeModal").should(be.visible).click()
+    browser.all('tbody td:nth-of-type(2)').should(have.exact_texts(
+        'Test Test',
+        'test@test.com',
+        'Male',
+        '1234567890',
+        '12 May,1919',
+        'Computer Science',
+        'Music',
+        'character.png',
+        'Sugar Palace, a candy store in Ponyville.',
+        'NCR Delhi'))
