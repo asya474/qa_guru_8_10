@@ -17,7 +17,7 @@ def test_registration_form(browser_management):
     browser.element(".react-datepicker__year-select").should(be.visible).click()
     browser.element(".react-datepicker__year-select > option:nth-child(20)").should(be.visible).click()
     browser.element(".react-datepicker__day.react-datepicker__day--012").should(be.visible).click()
-    browser.element("input#subjectsInput").type('Hello world').press_enter()
+    browser.element('#subjectsInput').type('computer science').press_enter()
     browser.element("#uploadPicture").should(be.visible).type(os.path.abspath("pictures/character.png"))
     browser.element("#currentAddress").type("Hollywood")
     browser.element('#react-select-3-input').type('NCR').press_enter()
