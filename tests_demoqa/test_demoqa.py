@@ -29,7 +29,7 @@ def test_registration_form(browser_management):
     "Female",
     "1234567890",
     "12 May 1919",
-    "Hello world",
+    "computer science",
     "Sports",
     "character.png",
     "Hollywood",
