@@ -19,7 +19,7 @@ def test_registration_form(browser_management):
     browser.element(".react-datepicker__day.react-datepicker__day--012").should(be.visible).click()
     browser.element('#subjectsInput').type('computer science').press_enter()
     browser.element("#uploadPicture").should(be.visible).type(os.path.abspath("pictures/character.png"))
-    browser.element("#currentAddress").type("Hollywood")
+    browser.element('#currentAddress').should(be.blank).type('Sugar Palace, a candy store in Ponyville.')
     browser.element('#react-select-3-input').type('NCR').press_enter()
     browser.element('#react-select-4-input').type('Delhi').press_enter()
     browser.element("#submit").click()
@@ -32,6 +32,6 @@ def test_registration_form(browser_management):
     "computer science",
     "Sports",
     "character.png",
-    "Hollywood",
+    "Sugar Palace, a candy store in Ponyville.",
     "NCR Delhi"))
     browser.element("#closeLargeModal").should(be.visible).click()
